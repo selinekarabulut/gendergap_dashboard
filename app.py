@@ -31,7 +31,7 @@ female_percentage_by_sysofgov = calculate_gender_percentage(merged_data, ['sysof
 
 # Sidebar for user input
 with st.sidebar:
-    st.title('⚖️  Gender Gap at the Political Party Leadership Level')
+    st.title('⚖️  Gender Disparity in Political Party Leadership')
     year_list = sorted(set(female_percentage['in_year']).union(female_percentage_by_sysofgov['in_year']), reverse=True)
     selected_year = st.selectbox('Select a year', [int(year) for year in year_list])
 
