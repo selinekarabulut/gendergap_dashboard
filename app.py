@@ -69,15 +69,15 @@ def make_pie_chart(year):
     data = female_percentage[female_percentage['in_year'] == year]
     total_percentage = data['percentage'].mean()
     fig = px.pie(names=["Female", "Male"], values=[total_percentage, 100-total_percentage], 
-                 title=f"Percentage of Female Party Leaders in {year}")
+                 title=f"Percentage of Women Party Leaders in {year}")
     return fig
 
 # Create a bar chart for sysofgov data
 def create_sysofgov_bar_chart(data):
     bar_chart = px.bar(data, x='sysofgov', y='percentage', color='sysofgov',
-                       title=f"Percentage of Female Leaders by System of Government in {selected_year}",
-                       labels={'(%)': '(%) of Females', 'sysofgov': 'System of Government'})
-    bar_chart.update_layout(xaxis_title="System of Government", yaxis_title="(%) of Female Political Party Leaders")
+                       title=f"Percentage of Women Leaders by System of Government in {selected_year}",
+                       labels={'(%)': '(%) of Women', 'sysofgov': 'System of Government'})
+    bar_chart.update_layout(xaxis_title="System of Government", yaxis_title="(%) of Women Political Party Leaders")
     return bar_chart
 
 
@@ -95,20 +95,20 @@ col1, col2 = st.columns([3, 1])  # Allocates space to choropleth map and pie cha
 
         
 with col1:
-    st.subheader(f" 🌍 Comparative Analysis of Female Political Party Leaders in {selected_year}")
+    st.subheader(f" 🌍 Comparative Analysis of Women Political Party Leaders in {selected_year}")
     choropleth = make_choropleth(df_selected_year)
     st.plotly_chart(choropleth, use_container_width=True)
 
    
 
 with col2:
-    st.subheader(f"Percentage of Female Political Party Leaders in {selected_year}")
+    st.subheader(f"Percentage of Women Political Party Leaders in {selected_year}")
     pie_chart = make_pie_chart(selected_year)
     st.plotly_chart(pie_chart, use_container_width=True)
 
     
 
 # Display the bar chart below the maps
-st.subheader(f"Female Political Party Leadership by System of Government in {selected_year}")
+st.subheader(f"Women Political Party Leaders by System of Government in {selected_year}")
 sysofgov_chart = create_sysofgov_bar_chart(selected_data_sysofgov)
 st.plotly_chart(sysofgov_chart, use_container_width=True)
