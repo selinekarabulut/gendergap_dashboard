@@ -68,8 +68,7 @@ def make_choropleth(data):
 def make_pie_chart(year):
     data = female_percentage[female_percentage['in_year'] == year]
     total_percentage = data['percentage'].mean()
-    fig = px.pie(names=["Female", "Male"], values=[total_percentage, 100-total_percentage], 
-                 title=f"Percentage of Women Party Leaders in {year}")
+    fig = px.pie(names=["Female", "Male"], values=[total_percentage, 100-total_percentage])
     return fig
 
 # Create a bar chart for sysofgov data
