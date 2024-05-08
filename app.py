@@ -74,7 +74,6 @@ def make_pie_chart(year):
 # Create a bar chart for sysofgov data
 def create_sysofgov_bar_chart(data):
     bar_chart = px.bar(data, x='sysofgov', y='percentage', color='sysofgov',
-                       title=f"Percentage of Women Leaders by System of Government in {selected_year}",
                        labels={'(%)': '(%) of Women', 'sysofgov': 'System of Government'})
     bar_chart.update_layout(xaxis_title="System of Government", yaxis_title="(%) of Women Political Party Leaders")
     return bar_chart
