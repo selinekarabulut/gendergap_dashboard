@@ -83,7 +83,7 @@ with st.expander(':red[**About**]', expanded=True):
         st.write('''
             - Data:
                 -  The data on political party leadership was collected as part of my doctoral dissertation research.
-                -  GPS coordinates for every world country (https://developers.google.com/public-data/docs/canonical/countries_csv).
+                -  GPS coordinates for every country (https://developers.google.com/public-data/docs/canonical/countries_csv).
             - Github repo: (https://github.com/selinekarabulut/gendergap_dashboard/)
             ''')
         
